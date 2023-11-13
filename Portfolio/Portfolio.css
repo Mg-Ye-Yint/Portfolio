@@ -1,0 +1,82 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: teal;
+    color: #333;
+}
+
+header {
+    background-color: cyan;
+    color: rgb(255, 3, 3);
+    padding: 1em;
+    text-align: center;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: wheat;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-link {
+    display: block;
+    margin-bottom: 10px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+footer {
+    background-color: cyan;
+    color: rgb(255, 3, 3);
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+}
+
+.owner-details {
+    color: white;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.owner-photo {
+    width: 250px; 
+    height: auto;
+    margin-left: 900px; 
+    border-radius: 50%; 
+}
+.owner-details a {
+    color: rgb(255, 3, 221); 
+}
+.owner-details a:hover{
+    color: cyan;
+}
+.owner-details h3 {
+    color: rgb(210, 232, 83); 
+}
+h3 {
+    color: white;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 100%;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
