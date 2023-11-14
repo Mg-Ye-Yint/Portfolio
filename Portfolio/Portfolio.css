@@ -7,13 +7,17 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: teal;
+    background-image: url('/images/black-abstract.jpg'); 
+    background-size: cover;
     color: #333;
+}
+header, section, footer, b, h1, h2, h3, p, li, a {
+    font-family: 'Arial', sans-serif;
 }
 
 header {
-    background-color: cyan;
-    color: rgb(255, 3, 3);
+    background-color: silver;
+    color: darkblue;
     padding: 1em;
     text-align: center;
 }
@@ -22,7 +26,8 @@ section {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: wheat;
+    background-image: url('/images/silver-abstract.png');
+    background-size: cover;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -41,8 +46,8 @@ section {
 }
 
 footer {
-    background-color: cyan;
-    color: rgb(255, 3, 3);
+    background-color: silver;
+    color: darkblue;
     text-align: center;
     padding: 1em 0;
     width: 100%;
