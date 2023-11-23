@@ -1,0 +1,142 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/black-abstract.jpg'); 
+    background-size: cover;
+    color: #333;
+}
+
+header {
+  font-family: 'Chakra Petch', sans-serif;
+}
+header .navbar{
+    padding-bottom: 40px;
+}
+section, footer, b, h2, h3, p, li, a {
+font-family: 'Sriracha', cursive;
+}
+
+header {
+    color: white;
+    padding: 5em;
+    text-align: center;
+}
+.header-container h1 {
+    font-size: 3em;
+    opacity: 0;
+    animation: fadeInOut 4s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+h1 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    max-width: 1800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-link {
+    display: block;
+    margin-bottom: 10px;
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+    color: rgb(0, 253, 194);
+}
+
+footer {
+    background-color: silver;
+    color: darkblue;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+}
+
+.owner-details {
+    color: white;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.owner-photo {
+    opacity: -3px;
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out; 
+    margin: auto;
+    display: block;
+}
+
+
+.owner-photo:hover {
+    transform: scale(1.5); 
+    transition: transform 0.3s ease-in-out; 
+}
+
+#Aboutme{
+    color: white;
+    font-size: 2em;
+}
+
+#contact{
+    color: white;
+    font-size: 2em;
+}
+#java{
+    color: white;
+    font-size: 2em;
+}
+#frontend{
+    color: white;
+    font-size: 2em;
+}
+
+h3 {
+    color: white;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navbar a{
+    margin: 0 10px 5px;
+    text-decoration: none;
+    font-size: 2em;
+    color: yellow;
+}
+
