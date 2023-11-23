@@ -11,23 +11,45 @@ body {
     background-size: cover;
     color: #333;
 }
-header, section, footer, b, h1, h2, h3, p, li, a {
-    font-family: 'Arial', sans-serif;
+
+header {
+  font-family: 'Chakra Petch', sans-serif;
+}
+header .navbar{
+    padding-bottom: 40px;
+}
+section, footer, b, h2, h3, p, li, a {
+font-family: 'Sriracha', cursive;
 }
 
 header {
-    background-color: silver;
-    color: darkblue;
-    padding: 1em;
+    color: white;
+    padding: 5em;
     text-align: center;
+}
+.header-container h1 {
+    font-size: 3em;
+    opacity: 0;
+    animation: fadeInOut 4s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+h1 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section {
-    max-width: 800px;
+    max-width: 1800px;
     margin: 20px auto;
     padding: 20px;
-    background-image: url('/images/silver-abstract.png');
-    background-size: cover;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -35,14 +57,14 @@ section {
 .project-link {
     display: block;
     margin-bottom: 10px;
-    color: #007BFF;
+    color: yellow;
     text-decoration: none;
     font-weight: bold;
 }
 
 .project-link:hover {
     text-decoration: underline;
-    color: red;
+    color: rgb(0, 253, 194);
 }
 
 footer {
@@ -61,43 +83,37 @@ footer {
 }
 
 .owner-photo {
+    opacity: -3px;
     width: 250px;
     height: auto;
-    margin-left: 900px;
     border-radius: 50%;
     transition: transform 0.3s ease-in-out; 
+    margin: auto;
+    display: block;
 }
 
-.owner-details a {
-    color: rgb(255, 3, 221);
-}
 
-.owner-details a:hover {
-    color: cyan;
-}
-.owner-details p:hover {
-    font-size: 22px;
-    transition-delay: 0.1s;
-}
-.owner-details p {
-    transition: font-size 0.5s ease-in-out;
-}
-.owner-details img:hover {
+.owner-photo:hover {
     transform: scale(1.5); 
     transition: transform 0.3s ease-in-out; 
 }
 
-.owner-details h3 {
-    color: rgb(210, 232, 83);
-    font-size: 26px; 
-    transition: font-size 0.5s ease-in-out;
-   
+#Aboutme{
+    color: white;
+    font-size: 2em;
 }
 
-
-.owner-details h3:hover {
-    font-size: 32px; 
-    transition-delay: 0.1s;
+#contact{
+    color: white;
+    font-size: 2em;
+}
+#java{
+    color: white;
+    font-size: 2em;
+}
+#frontend{
+    color: white;
+    font-size: 2em;
 }
 
 h3 {
@@ -110,3 +126,17 @@ h3 {
     padding-left: 5px;
     padding-right: 5px;
 }
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navbar a{
+    margin: 0 10px 5px;
+    text-decoration: none;
+    font-size: 2em;
+    color: yellow;
+}
+
