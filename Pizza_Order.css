@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4caf50;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+section {
+    max-width: 600px;
+    margin: 2em auto;
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+.pizza-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pizza-images img {
+    width: 48%; 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+}
+#a1{
+    width: 37%;
+    height: 37%;
+    margin-top: 10px;
+}
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 0.5em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

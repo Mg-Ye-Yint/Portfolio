@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <link rel="stylesheet" href="Pizza_Order.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pizza Order</h1>
+    </header>
+
+    <section>
+        <form action="#">
+            <label for="pizza-size">Pizza Size:</label>
+            <select id="pizza-size" name="pizza-size">
+                <option value="small">Small - $10.99</option>
+                <option value="medium">Medium - $14.99</option>
+                <option value="large">Large - $18.99</option>
+            </select>
+
+            <label for="topping">Topping:</label>
+            <input type="text" id="topping" name="topping" placeholder="Enter topping">
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1">
+
+            <button type="submit">Place Order</button>
+        </form>
+
+        <div class="pizza-images">
+            <img src="/images/pizzas.jpg" alt="Pizza">
+            <img src="/images/chef-logo.avif" alt="chef">
+          
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #98da7e;
+}
+
+.calendar {
+    max-width: 400px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ecf0f1; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.month {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0b1e2a;
+}
+.month:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+}
+.day:hover{
+   
+        transform: translateY(-5px);
+        transition: transform 0.3s ease-in-out;
+    
+    
+}
+.dayW.weekend:hover{
+    transform: translateY(-5px);
+        transition: transform 0.3s ease-in-out;
+}
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    font-weight: bold;
+}
+
+.day {
+    width: 30px;
+    text-align: center;
+    color: #3498db; 
+}
+
+.day.weekend {
+    color: #e74c3c;
+}
+
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.date {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #ecf0f1; 
+}
+
+.date:hover {
+    background-color: #3498db;
+    color: #fff; 
+}
+
+.date.empty {
+    visibility: hidden;
+}
+
+.dayW {
+    color: red;
+}
+
+.dayW.weekend {
+    color: #e74c3c;
+}
+
+.date.weekend {
+    color: #e74c3c; 
+    background-color: #f9ebec; 
+}
+
+.date.weekend:hover {
+    background-color: #e74c3c; 
+    color: #fff; 
+}
+#R:hover{
+    background-color: #e74c3ced;
+    color: #fff;
+}
