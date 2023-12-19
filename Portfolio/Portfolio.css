@@ -139,51 +139,43 @@ h3 {
     font-size: 2em;
     color: yellow;
 }
-/* For smaller screens */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
     header {
-        padding: 3em; /* Adjust header padding for smaller screens */
+        padding: 1em;
     }
 
     .header-container h1 {
-        font-size: 2.5em; /* Adjust heading size */
+        font-size: 2em;
     }
 
-    .project-link {
-        font-size: 1.5em; /* Adjust project link size */
+    /* Adjust header, section, footer, and other styles for smaller screens */
+    header .navbar {
+        padding-bottom: 20px;
     }
 
-    .owner-photo {
-        width: 200px; /* Adjust owner's photo width */
-    }
-
-    .navbar a {
-        font-size: 1.8em; /* Adjust navbar link size */
-        margin: 0 8px 5px; /* Adjust margin */
-    }
-}
-
-/* For even smaller screens, like mobile phones */
-@media (max-width: 480px) {
-    header {
-        padding: 2em; /* Further adjust header padding */
-    }
-
-    .header-container h1 {
-        font-size: 2em; /* Further adjust heading size */
-    }
-
-    .project-link {
-        font-size: 1.2em; /* Further adjust project link size */
+    section {
+        padding: 10px;
+        margin: 10px 0;
     }
 
     .owner-photo {
-        width: 150px; /* Adjust owner's photo width */
+        width: 150px;
+    }
+
+    .project-link {
+        font-size: 1.5em;
+    }
+
+    footer {
+        padding: 0.5em 0;
     }
 
     .navbar a {
-        font-size: 1.5em; /* Further adjust navbar link size */
-        margin: 0 5px 5px; /* Further adjust margin */
+        margin: 0 5px 5px;
+        font-size: 1.5em;
     }
 }
-
