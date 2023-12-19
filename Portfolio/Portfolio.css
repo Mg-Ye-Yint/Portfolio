@@ -139,25 +139,28 @@ h3 {
     font-size: 2em;
     color: yellow;
 }
-@media screen and (max-width: 768px) {
-    header {
-        padding: 1em;
+@media only screen and (min-width: 992px) {
+    body {
+      font-size: 16px;
+      width: 80%;
+      margin: auto;
     }
-
-    .navbar {
-        flex-direction: row;
+  }
+  
+ 
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    body {
+      font-size: 14px;
+      width: 90%;
+      margin: auto;
     }
-
-    .navbar a {
-        margin: 0 10px 5px;
-    }
-
-    .owner-details {
-        justify-content: center;
-        text-align: center;
-    }
-
-    .project-link {
-        font-size: 1.2em;
+  }
+  
+  
+  @media only screen and (max-width: 767px) {
+    body {
+      font-size: 12px;
+      width: 100%;
+      margin: 0;
     }
 }
