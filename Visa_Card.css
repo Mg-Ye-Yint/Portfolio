@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4d4747;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    width: 250px;
+    background: url('visa-card-background.jpg') center/cover;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-logo {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.chip {
+    height: 30px;
+    width: 45px;
+    border-radius: 5px;
+}
+
+.card-number {
+    margin-top: 20px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: rgb(252, 214, 119);
+}
+
+.card-holder,
+.expiry-date {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.card-holder::before,
+.expiry-date::before {
+    content: attr(data-placeholder);
+    color: #fff;
+}
+
+.card-holder,
+.expiry-date,
+.card-type {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-type img {
+    height: 30px;
+}
