@@ -140,112 +140,24 @@ h3 {
     color: yellow;
 }
 @media screen and (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
     header {
         padding: 1em;
     }
 
-    .header-container h1 {
-        font-size: 2em;
-    }
-
-    /* Adjust header, section, footer, and other styles for smaller screens */
-    header .navbar {
-        padding-bottom: 20px;
-    }
-
-    section {
-        padding: 10px;
-        margin: 10px 0;
-    }
-
-    .owner-photo {
-        width: 150px;
-    }
-
-    .project-link {
-        font-size: 1.5em;
-    }
-
-    footer {
-        padding: 0.5em 0;
+    .navbar {
+        flex-direction: row;
     }
 
     .navbar a {
-        margin: 0 5px 5px;
-        font-size: 1.5em;
-    }
-}
-@media screen and (max-width: 480px) {
-    body {
-        font-size: 10px;
+        margin: 0 10px 5px;
     }
 
-    header {
-        padding: 0.3em;
+    .owner-details {
+        justify-content: center;
+        text-align: center;
     }
 
-    .header-container h1 {
+    .project-link {
         font-size: 1.2em;
-        margin: 3px 0;
-    }
-
-    .owner-photo {
-        width: 90px;
-    }
-
-    .navbar a {
-        font-size: 1em;
-    }
-
-    section {
-        margin: 3px 0;
-        padding: 3px;
-    }
-
-    .project-link {
-        font-size: 0.9em;
-    }
-
-    footer {
-        padding: 0.2em 0;
-    }
-}
-@media screen and (max-width: 360px) {
-    body {
-        font-size: 10px;
-    }
-
-    header {
-        padding: 0.3em;
-    }
-
-    .header-container h1 {
-        font-size: 1.2em;
-        margin: 3px 0;
-    }
-
-    .owner-photo {
-        width: 90px;
-    }
-
-    .navbar a {
-        font-size: 1em;
-    }
-
-    section {
-        margin: 3px 0;
-        padding: 3px;
-    }
-
-    .project-link {
-        font-size: 0.9em;
-    }
-
-    footer {
-        padding: 0.2em 0;
     }
 }
