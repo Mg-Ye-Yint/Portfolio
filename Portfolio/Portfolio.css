@@ -127,13 +127,14 @@ h3 {
     padding-right: 5px;
 }
 
-.navbar{
+.navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background-color: #333;
+    padding: 10px;
 }
-
-.navbar a{
+.navbar a {
     margin: 0 10px 5px;
     text-decoration: none;
     font-size: 2em;
@@ -185,5 +186,42 @@ h3 {
     #Aboutme, #contact, #java, #frontend {
         font-size: 2em;
         /* Adjust other styles as needed */
+    }
+}
+@media only screen and (max-width: 767px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        margin: 5px 0;
+    }
+}
+
+/* For tablets (768px to 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .navbar {
+        /* Adjustments for tablet screens */
+        padding: 10px;
+        justify-content: space-evenly;
+    }
+
+    .navbar a {
+        /* Adjustments for tablet screen links */
+        font-size: 1.8em;
+    }
+}
+
+/* For desktops (992px and larger) */
+@media only screen and (min-width: 992px) {
+    .navbar {
+        /* Adjustments for desktop screens */
+        padding: 10px;
+    }
+
+    .navbar a {
+        /* Adjustments for desktop screen links */
+        font-size: 2em;
     }
 }
