@@ -214,3 +214,38 @@ h3 {
         padding: 0.2em 0;
     }
 }
+@media screen and (max-width: 360px) {
+    body {
+        font-size: 10px;
+    }
+
+    header {
+        padding: 0.3em;
+    }
+
+    .header-container h1 {
+        font-size: 1.2em;
+        margin: 3px 0;
+    }
+
+    .owner-photo {
+        width: 90px;
+    }
+
+    .navbar a {
+        font-size: 1em;
+    }
+
+    section {
+        margin: 3px 0;
+        padding: 3px;
+    }
+
+    .project-link {
+        font-size: 0.9em;
+    }
+
+    footer {
+        padding: 0.2em 0;
+    }
+}
