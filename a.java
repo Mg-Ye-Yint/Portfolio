@@ -1,65 +1,226 @@
-package Project;
+import java.util.ArrayList;
 import java.util.Scanner;
 
+class Student {
+    private String name;
+    private int ID;
+    private ArrayList<Course> enrolledCourses;
+    private ArrayList<Integer> grades; // Store grades for enrolled courses
+
+    public Student(String name, int ID) {
+        this.name = name;
+        this.ID = ID;
+        this.enrolledCourses = new ArrayList<>();
+        this.grades = new ArrayList<>();
+    }
+
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public ArrayList<Course> getEnrolledCourses() {
+        return enrolledCourses;
+    }
+
+    public ArrayList<Integer> getGrades() {
+        return grades;
+    }
+
+    // Method to enroll a student in a course
+    public void enrollCourse(Course course) {
+        enrolledCourses.add(course);
+        course.enrollStudent();
+    }
+
+    // Method to assign a grade to a student for a specific course
+    public void assignGrade(Course course, int grade) {
+        if (enrolledCourses.contains(course)) {
+            int courseIndex = enrolledCourses.indexOf(course);
+            grades.set(courseIndex, grade);
+            System.out.println("Grade assigned successfully for " + name + " in " + course.getCourseCode());
+        } else {
+            System.out.println(name + " is not enrolled in " + course.getCourseCode());
+        }
+    }
+}
+
+class Course {
+    private String courseCode;
+    private String courseName;
+    private int maxCapacity;
+    private int enrolledStudentsCount;
+    private static int totalEnrolledStudents = 0; // Track total enrolled students
+
+    public Course(String courseCode, String courseName, int maxCapacity) {
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+        this.maxCapacity = maxCapacity;
+        this.enrolledStudentsCount = 0;
+    }
+
+    // Getters
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public int getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public static int getTotalEnrolledStudents() {
+        return totalEnrolledStudents;
+    }
+
+    // Method to enroll a student in a course
+    public void enrollStudent() {
+        if (enrolledStudentsCount < maxCapacity) {
+            enrolledStudentsCount++;
+            totalEnrolledStudents++;
+        } else {
+            System.out.println("Course " + courseCode + " is full. Cannot enroll more students.");
+        }
+    }
+}
+
+class CourseManagement {
+    private static ArrayList<Course> courses = new ArrayList<>();
+    private static ArrayList<Student> students = new ArrayList<>();
+
+    // Method to add a new course
+    public static void addCourse(String courseCode, String courseName, int maxCapacity) {
+        Course newCourse = new Course(courseCode, courseName, maxCapacity);
+        courses.add(newCourse);
+    }
+
+    // Method to enroll a student in a course
+    public static void enrollStudent(String studentName, int studentID, String courseCode) {
+        Course course = findCourse(courseCode);
+        if (course != null) {
+            Student student = findOrCreateStudent(studentName, studentID);
+            if (!student.getEnrolledCourses().contains(course)) {
+                student.enrollCourse(course);
+                students.add(student);
+                System.out.println(studentName + " enrolled in " + courseCode + " successfully.");
+            } else {
+                System.out.println(studentName + " is already enrolled in " + courseCode + ".");
+            }
+        } else {
+            System.out.println("Course " + courseCode + " not found.");
+        }
+    }
+
+    // Method to assign a grade to a student for a specific course
+    public static void assignGrade(String studentName, String courseCode, int grade) {
+        Course course = findCourse(courseCode);
+        if (course != null) {
+            Student student = findStudentByName(studentName);
+            if (student != null) {
+                student.assignGrade(course, grade);
+            } else {
+                System.out.println("Student " + studentName + " not found.");
+            }
+        } else {
+            System.out.println("Course " + courseCode + " not found.");
+        }
+    }
+
+    // Helper methods...
+
+    // Method to find a specific course by its code
+    private static Course findCourse(String courseCode) {
+        for (Course course : courses) {
+            if (course.getCourseCode().equals(courseCode)) {
+                return course;
+            }
+        }
+        return null;
+    }
+
+    // Method to find or create a student based on name and ID
+    private static Student findOrCreateStudent(String studentName, int studentID) {
+        for (Student student : students) {
+            if (student.getName().equals(studentName) && student.getID() == studentID) {
+                return student;
+            }
+        }
+        return new Student(studentName, studentID);
+    }
+
+    // Method to find a student by name
+    private static Student findStudentByName(String studentName) {
+        for (Student student : students) {
+            if (student.getName().equals(studentName)) {
+                return student;
+            }
+        }
+        return null;
+    }
+}
+
 public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
 
-	public static void main(String[] args) {
-		
-	Scanner scanner = new Scanner(System.in); //using java built-in function to take user input.
-	
-	int score = 0; //stating a variable that the program will add up, Initialize to zero currently.
-	
-	String[] questions = { //stating five questions that users have to answer.
-			
-		    "1. What does 'Java' stand for?",
-		    "2. Which company owns 'Java' currently?",
-		    "3. What does JDK stand for?",
-		    "4. What does JRE stand for?",
-		    "5. Which is the responsive data type in the following?"
-		};
+        do {
+            System.out.println("Menu:");
+            System.out.println("1. Add Course");
+            System.out.println("2. Enroll Student");
+            System.out.println("3. Assign Grade");
+            System.out.println("4. Exit");
+            System.out.println("Enter your choice:");
 
-	String[] options = { //stating four options for each question.
-			
-		    "A. Just Another Vague Acronym\t B. Joint Application Venture Architecture\t C. Java Application Virtual Architecture\t D. None of the above",
-		    "A. IBM\t B. Sun Microsystems\t C. Oracle\t D. Open AI",
-		    "A. Java Design Kit\t B. Java Development Kit\t C. Java Developer Kernelm\t D. Justified Developing Knowledge",
-		    "A. Java Runtime Environment\t B. Java Readable Execution\t C. Just Reliable Execution\t D. Java Runtime Engine",
-		    "A. int\t B. String\t C. float\t D. long"
-		};
-	
-	char[] correctAnswer = { //correct answer among the options
-			
-		    'D', // Correct answer for question 1
-		    'C', // Correct answer for question 2
-		    'B', // Correct answer for question 3
-		    'A', // Correct answer for question 4
-		    'B'  // Correct answer for question 5
-		};
-	
-	// Displaying the questions and options, getting the user inputs, and calculating the scores
-	for(int i = 0; i < questions.length; i++) { 
-		
-		System.out.println(questions[i]);
-		System.out.println(options[i]);
-		System.out.println("Choose the correct answer");
-		
-		//convert to upper-case if the user enter a lower case and take only the first character.
-		char userInput = scanner.next().toUpperCase().charAt(0);
-		
-		//checking the answer
-		if(userInput == correctAnswer[i]) {
-			score++; //increase if the answer is correct
-		} 
-		
-	}
-	//calculating the percentage score
-	double percentageScore = (score * 100)/questions.length;
-	
-	//displaying the result
-	System.out.println("\nYou score: " + score + " out of " + questions.length);
-    System.out.println("Total percentage Score: " + percentageScore + "%");
-    
-    //closing the scanner
-    scanner.close(); 
-	}
+            choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline character after reading integer
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter course code:");
+                    String code = scanner.nextLine();
+                    System.out.println("Enter course name:");
+                    String name = scanner.nextLine();
+                    System.out.println("Enter max capacity:");
+                    int capacity = scanner.nextInt();
+                    CourseManagement.addCourse(code, name, capacity);
+                    break;
+                case 2:
+                    System.out.println("Enter student name:");
+                    String studentName = scanner.nextLine();
+                    System.out.println("Enter student ID:");
+                    int studentID = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline character
+                    System.out.println("Enter course code to enroll:");
+                    String courseCode = scanner.nextLine();
+                    CourseManagement.enrollStudent(studentName, studentID, courseCode);
+                    break;
+                case 3:
+                    System.out.println("Enter student name:");
+                    String name = scanner.nextLine();
+                    System.out.println("Enter course code:");
+                    String code = scanner.nextLine();
+                    System.out.println("Enter grade:");
+                    int grade = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline character
+                    CourseManagement.assignGrade(name, code, grade);
+                    break;
+                case 4:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please enter a valid option.");
+                    break;
+            }
+        } while (choice != 4);
+
+        scanner.close();
+    }
 }

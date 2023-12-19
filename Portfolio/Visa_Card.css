@@ -10,7 +10,7 @@ body {
 
 .card {
     width: 250px;
-    background: url('/images/visa-card-background.jpg') center/cover;
+    background: url('visa-card-background.jpg') center/cover;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

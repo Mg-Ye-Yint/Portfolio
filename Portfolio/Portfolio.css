@@ -7,7 +7,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('/images/black-abstract.jpg'); 
+    background-image: url('black-abstract.jpg'); 
     background-size: cover;
     color: #333;
 }
@@ -64,7 +64,7 @@ section {
 
 .project-link:hover {
     text-decoration: underline;
-    color: rgb(0, 253, 194);
+    color: rgb(0, 252, 194);
 }
 
 footer {
@@ -138,5 +138,52 @@ h3 {
     text-decoration: none;
     font-size: 2em;
     color: yellow;
+}
+/* For smaller screens */
+@media (max-width: 768px) {
+    header {
+        padding: 3em; /* Adjust header padding for smaller screens */
+    }
+
+    .header-container h1 {
+        font-size: 2.5em; /* Adjust heading size */
+    }
+
+    .project-link {
+        font-size: 1.5em; /* Adjust project link size */
+    }
+
+    .owner-photo {
+        width: 200px; /* Adjust owner's photo width */
+    }
+
+    .navbar a {
+        font-size: 1.8em; /* Adjust navbar link size */
+        margin: 0 8px 5px; /* Adjust margin */
+    }
+}
+
+/* For even smaller screens, like mobile phones */
+@media (max-width: 480px) {
+    header {
+        padding: 2em; /* Further adjust header padding */
+    }
+
+    .header-container h1 {
+        font-size: 2em; /* Further adjust heading size */
+    }
+
+    .project-link {
+        font-size: 1.2em; /* Further adjust project link size */
+    }
+
+    .owner-photo {
+        width: 150px; /* Adjust owner's photo width */
+    }
+
+    .navbar a {
+        font-size: 1.5em; /* Further adjust navbar link size */
+        margin: 0 5px 5px; /* Further adjust margin */
+    }
 }
 
